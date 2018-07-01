@@ -12,7 +12,7 @@ const queueFn = require('@datastructures-js/queue');
 const queue = queueFn();
 ```
 
-### API
+## API
 
 **.enqueue(element)** 
 
