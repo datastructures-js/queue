@@ -11,8 +11,9 @@
     "url": "git+https://github.com/datatructures-js/queue.git"
   },
   "keywords": [
-    "queue es6",
     "queue",
+    "priority queue",
+    "queue es6",
     "queue js"
   ],
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
