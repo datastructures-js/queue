@@ -1,6 +1,6 @@
 {
   "name": "@datastructures-js/queue",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "queue implementation in javascript",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/datatructures-js/queue.git"
+    "url": "git+https://github.com/datastructures-js/queue.git"
   },
   "keywords": [
     "queue",
@@ -18,9 +18,9 @@
   "author": "Eyas Ranjous <eyas.ranjous@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/datatructures-js/queue/issues"
+    "url": "https://github.com/datastructures-js/queue/issues"
   },
-  "homepage": "https://github.com/datatructures-js/queue#readme",
+  "homepage": "https://github.com/datastructures-js/queue#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
