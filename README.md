@@ -8,21 +8,11 @@ elements data type: any type.
 
 ## Usage
 ```js
-const queueFactory = require('@datastructures-js/queue');
+const queueFn = require('@datastructures-js/queue');
+const queue = queueFn();
 ```
-
-## Queue
-FIFO Queue
 
 ### API
-**object creation**
-```javascript
-const queue = queueFactory.queue();
-
-// OR
-
-const queue = queueFactory.q();
-```
 
 **.enqueue(element)** 
 
@@ -83,79 +73,6 @@ queue.clear();
 queue.length(); // 0
 ```
 
-## Priority Queue
-
-### API
-
-**object creation**
-```javascript
-const priorityQueue = queueFactory.priorityQueue();
-
-// OR
-
-const priorityQueue = queueFactory.pq();
-```
-
-**.enqueue(element, priority)** 
-
-adds an element with priority (number) to the back of the queue.
-```javascript
-priorityQueue.enqueue('patient 1', 2); // lower priority
-priorityQueue.enqueue('patient 2', 1); // higher priority
-```
-
-**.front()** 
-
-returns the front element in queue.
-```javascript
-console.log(priorityQueue.front()); // patient 1
-```
-
-**.back()** 
-
-returns the back element in the queue.
-```javascript
-console.log(priorityQueue.back()); // patient 3
-```
-
-**.dequeue()** 
-
-dequeues the highest priority element from the queue.
-```javascript
-console.log(priorityQueue.dequeue()); // patient 2
-console.log(priorityQueue.front()); // patient 1
-```
-
-**.isEmpty()** 
-
-checks if the queue is empty.
-```javascript
-console.log(priorityQueue.isEmpty()); // false
-```
-
-**.length()** 
-
-returns the length of the queue.
-```javascript
-console.log(priorityQueue.length()); // 1
-```
-
-**.toArray()** 
-
-converts the queue to an array from highest prority element to lowest
-```javascript
-priorityQueue.enqueue('patient 3', 5);
-priorityQueue.enqueue('patient 4', 1);
-console.log(priorityQueue.toArray()); // ['patient 4', 'patient 1', 'patient 5']
-```
-
-**.clear()** 
-
-clears the queue
-```javascript
-priorityQueue.clear();
-console.log(priorityQueue.length()); // 0
-```
 ## Build
 ```
 grunt build

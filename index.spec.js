@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const queue = require('../lib/queue');
+const queue = require('./index');
 
 describe('queue tests', () => {
   const q = queue();
