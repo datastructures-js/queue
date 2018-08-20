@@ -1,6 +1,6 @@
 {
   "name": "@datastructures-js/queue",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "queue implementation in javascript",
   "main": "index.js",
   "scripts": {
