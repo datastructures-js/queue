@@ -1,38 +1,23 @@
 /**
  * datastructures-js/queue
- * @copyright 2018 Eyas Ranjous <eyas.ranjous@gmail.com>
+ * @copyright 2018 Eyas Ranjous <https://github.com/eyas-ranjous>
  * @license MIT
  */
 const queue = () => {
   let elements = [];
   let offset = 0;
 
-  /**
-   * @returns {number}
-   */
   const length = () => elements.length - offset;
 
-  /**
-   * @returns {boolean}
-   */
   const isEmpty = () => length() === 0;
 
-  /**
-   * @returns {array}
-   */
   const toArray = () => elements.slice(offset);
 
-  /**
-   * clears the queue
-   */
   const clear = () => {
     offset = 0;
     elements = [];
   };
 
-  /**
-   * @returns {object}
-   */
   const front = () => {
     if (!isEmpty()) {
       return elements[offset];
@@ -40,9 +25,6 @@ const queue = () => {
     return null;
   };
 
-  /**
-   * @returns {object}
-   */
   const back = () => {
     if (!isEmpty()) {
       return elements[elements.length - 1];
@@ -50,16 +32,10 @@ const queue = () => {
     return null;
   };
 
-  /**
-   * @param {object} element
-   */
   const enqueue = el => elements.push(el);
 
-  /**
-   * only remove dequeued elements when reaching half size
-   * to improve performance for high frequency data
-   * @returns {object}
-   */
+  // only remove dequeued elements when reaching half size
+  // to improve performance for high frequency data
   const dequeue = () => {
     if (!isEmpty()) {
       const first = front();
@@ -73,7 +49,6 @@ const queue = () => {
     return null;
   };
 
-  // queue API
   return {
     length,
     isEmpty,
