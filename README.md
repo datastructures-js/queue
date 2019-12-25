@@ -104,7 +104,7 @@ clears all elements from the queue.
 
 ```js
 queue.clear();
-queue.length(); // 0
+queue.size(); // 0
 ```
 
 ### Build
