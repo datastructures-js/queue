@@ -4,6 +4,8 @@
 [![npm](https://img.shields.io/npm/v/@datastructures-js/queue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/queue.svg)](https://www.npmjs.com/packages/@datastructures-js/queue) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 
+A performant queue implementation in javascript.
+
 # Table of Contents
 * [Install](#install)
 * [API](#api)
@@ -49,6 +51,19 @@ const queue = new Queue();
 ### .enqueue(element)
 adds an element at the back of the queue.
 
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>params</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   <b>element</b>: {object}
+  </td>
+ </tr>
+</table>
+
 ```js
 queue.enqueue(10);
 queue.enqueue(20);
@@ -57,6 +72,19 @@ queue.enqueue(20);
 ### .front()
 peeks on the front element of the queue.
 
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {object}
+  </td>
+ </tr>
+</table>
+
 ```js
 console.log(queue.front()); // 10
 ```
@@ -64,12 +92,40 @@ console.log(queue.front()); // 10
 ### .back()
 peeks on the back element in the queue.
 
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {object}
+  </td>
+ </tr>
+</table>
+
 ```js
 console.log(queue.back()); // 20
 ```
 
 ### .dequeue()
-dequeue the front element in the queue.
+dequeue the front element in the queue. It does not use *.shift()* to dequeue an element. Instead, it uses an offset the get the front element and only remove elements when reaching half size of the queue.
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1) / O(n/2^k)</td>
+  <td>
+   {object}
+  </td>
+ </tr>
+</table>
+
+Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n^2)</b> if using shift(). 
 
 ```js
 console.log(queue.dequeue()); // 10
@@ -79,12 +135,38 @@ console.log(queue.front()); // 20
 ### .isEmpty()
 checks if the queue is empty.
 
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {boolean}
+  </td>
+ </tr>
+</table>
+
 ```js
 console.log(queue.isEmpty()); // false
 ```
 
 ### .size()
 returns the number of elements in the queue.
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {number}
+  </td>
+ </tr>
+</table>
 
 ```js
 console.log(queue.size()); // 1
