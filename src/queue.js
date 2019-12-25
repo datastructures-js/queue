@@ -1,5 +1,5 @@
 /**
- * datastructures-js/heap
+ * datastructures-js/queue
  * @copyright 2019 Eyas Ranjous <eyas.ranjous@gmail.com>
  * @license MIT
  */
