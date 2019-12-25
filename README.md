@@ -1,80 +1,116 @@
-# @datastrucures-js/queue
+# @datastructures-js/queue
 
 [![build:?](https://travis-ci.org/datastructures-js/queue.svg?branch=master)](https://travis-ci.org/datastructures-js/queue) 
 [![npm](https://img.shields.io/npm/v/@datastructures-js/queue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/queue.svg)](https://www.npmjs.com/packages/@datastructures-js/queue) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 
-elements data type: any type.
+# Table of Contents
+* [Install](#install)
+* [API](#api)
+  * [require](#require)
+  * [import](#import)
+  * [Creating a Queue](#create-a-queue)
+  * [.enqueue(element)](#enqueueelement)
+  * [.front()](#front)
+  * [.back()](#back)
+  * [.dequeue()](#dequeue)
+  * [.isEmpty()](#isEmpty)
+  * [.size()](#size)
+  * [.toArray()](#toarray)
+  * [.clear()](#clear)
+ * [Build](#build)
 
-## Usage
-```js
-const queueFn = require('@datastructures-js/queue');
-const queue = queueFn();
+## Install
+
+```sh
+npm install --save @datastructures-js/queue
 ```
 
 ## API
 
-**.enqueue(element)** 
+### require
 
-adds an element to the back of the queue.
-```javascript
+```js
+const Queue = require('@datastructures-js/queue');
+```
+
+### import
+
+```js
+import Queue from '@datastructures-js/queue';
+```
+
+### create a queue
+
+```js
+const queue = new Queue();
+```
+
+### .enqueue(element)
+adds an element at the back of the queue.
+
+```js
 queue.enqueue(10);
 queue.enqueue(20);
 ```
-**.front()** 
 
-returns the front element in queue.
-```javascript
+### .front()
+peeks on the front element of the queue.
+
+```js
 console.log(queue.front()); // 10
 ```
-**.back()** 
 
-returns the back element in the queue.
-```javascript
+### .back()
+peeks on the back element in the queue.
+
+```js
 console.log(queue.back()); // 20
 ```
 
-**.dequeue()** 
+### .dequeue()
+dequeue the front element in the queue.
 
-dequeues an element from the queue.
-```javascript
+```js
 console.log(queue.dequeue()); // 10
 console.log(queue.front()); // 20
 ```
 
-**.isEmpty()** 
-
+### .isEmpty()
 checks if the queue is empty.
-```javascript
+
+```js
 console.log(queue.isEmpty()); // false
 ```
-**.length()** 
 
-returns the length of the queue
-```javascript
+### .size()
+returns the number of elements in the queue.
+
+```js
 console.log(queue.length()); // 1
 ```
 
-**.toArray()** 
+### .toArray() 
+returns the remaining elements as an array.
 
-converts the queue to an array with front starting at 0
-```javascript
-queue.enqueue(1);
+```js
 queue.enqueue(4);
 queue.enqueue(2);
-console.log(queue.toArray()); // [1, 4, 2]
+console.log(queue.toArray()); // [20, 4, 2]
 ```
 
-**.clear()** 
+### .clear()
+clears all elements from the queue.
 
-clears the queue
-```javascript
+```js
 queue.clear();
 queue.length(); // 0
 ```
 
-## Build
-```
+### Build
+lint + tests
+
+```sh
 grunt build
 ```
 
