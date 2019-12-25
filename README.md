@@ -87,7 +87,7 @@ console.log(queue.isEmpty()); // false
 returns the number of elements in the queue.
 
 ```js
-console.log(queue.length()); // 1
+console.log(queue.size()); // 1
 ```
 
 ### .toArray() 
