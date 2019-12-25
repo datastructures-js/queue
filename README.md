@@ -42,7 +42,7 @@ const Queue = require('@datastructures-js/queue');
 import Queue from '@datastructures-js/queue';
 ```
 
-### create a queue
+### Create a Queue
 
 ```js
 const queue = new Queue();
@@ -110,7 +110,7 @@ console.log(queue.back()); // 20
 ```
 
 ### .dequeue()
-dequeue the front element in the queue. It does not use *.shift()* to dequeue an element. Instead, it uses an offset the get the front element and only remove elements when reaching half size of the queue.
+dequeue the front element in the queue. It does not use *.shift()* to dequeue an element. Instead, it uses an offset to get the front element and only remove elements when reaching half size of the queue.
 
 <table>
  <tr>
