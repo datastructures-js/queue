@@ -1,5 +1,5 @@
 .git*
-*.spec.js
+test
 .travis.yml
 Gruntfile.js
 coverage/

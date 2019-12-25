@@ -1,80 +1,220 @@
-# @datastrucures-js/queue
+# @datastructures-js/queue
 
 [![build:?](https://travis-ci.org/datastructures-js/queue.svg?branch=master)](https://travis-ci.org/datastructures-js/queue) 
 [![npm](https://img.shields.io/npm/v/@datastructures-js/queue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/queue.svg)](https://www.npmjs.com/packages/@datastructures-js/queue) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 
-elements data type: any type.
+A performant queue implementation in javascript.
 
-## Usage
-```js
-const queueFn = require('@datastructures-js/queue');
-const queue = queueFn();
+# Table of Contents
+* [Install](#install)
+* [API](#api)
+  * [require](#require)
+  * [import](#import)
+  * [Creating a Queue](#create-a-queue)
+  * [.enqueue(element)](#enqueueelement)
+  * [.front()](#front)
+  * [.back()](#back)
+  * [.dequeue()](#dequeue)
+  * [.isEmpty()](#isEmpty)
+  * [.size()](#size)
+  * [.toArray()](#toarray)
+  * [.clear()](#clear)
+ * [Build](#build)
+
+## Install
+
+```sh
+npm install --save @datastructures-js/queue
 ```
 
 ## API
 
-**.enqueue(element)** 
+### require
 
-adds an element to the back of the queue.
-```javascript
+```js
+const Queue = require('@datastructures-js/queue');
+```
+
+### import
+
+```js
+import Queue from '@datastructures-js/queue';
+```
+
+### create a queue
+
+```js
+const queue = new Queue();
+```
+
+### .enqueue(element)
+adds an element at the back of the queue.
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>params</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   element: {object}
+  </td>
+ </tr>
+</table>
+
+```js
 queue.enqueue(10);
 queue.enqueue(20);
 ```
-**.front()** 
 
-returns the front element in queue.
-```javascript
+### .front()
+peeks on the front element of the queue.
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {object}
+  </td>
+ </tr>
+</table>
+
+```js
 console.log(queue.front()); // 10
 ```
-**.back()** 
 
-returns the back element in the queue.
-```javascript
+### .back()
+peeks on the back element in the queue.
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {object}
+  </td>
+ </tr>
+</table>
+
+```js
 console.log(queue.back()); // 20
 ```
 
-**.dequeue()** 
+### .dequeue()
+dequeue the front element in the queue. It does not use *.shift()* to dequeue an element. Instead, it uses an offset the get the front element and only remove elements when reaching half size of the queue.
 
-dequeues an element from the queue.
-```javascript
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1) / O(n/2^k)</td>
+  <td>
+   {object}
+  </td>
+ </tr>
+</table>
+
+Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n^2)</b> if using shift(). 
+
+```js
 console.log(queue.dequeue()); // 10
 console.log(queue.front()); // 20
 ```
 
-**.isEmpty()** 
-
+### .isEmpty()
 checks if the queue is empty.
-```javascript
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {boolean}
+  </td>
+ </tr>
+</table>
+
+```js
 console.log(queue.isEmpty()); // false
 ```
-**.length()** 
 
-returns the length of the queue
-```javascript
-console.log(queue.length()); // 1
+### .size()
+returns the number of elements in the queue.
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {number}
+  </td>
+ </tr>
+</table>
+
+```js
+console.log(queue.size()); // 1
 ```
 
-**.toArray()** 
+### .toArray() 
+returns the remaining elements as an array.
 
-converts the queue to an array with front starting at 0
-```javascript
-queue.enqueue(1);
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {array}
+  </td>
+ </tr>
+</table>
+
+```js
 queue.enqueue(4);
 queue.enqueue(2);
-console.log(queue.toArray()); // [1, 4, 2]
+console.log(queue.toArray()); // [20, 4, 2]
 ```
 
-**.clear()** 
+### .clear()
+clears all elements from the queue.
 
-clears the queue
-```javascript
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+ </tr>
+</table>
+
+```js
 queue.clear();
-queue.length(); // 0
+queue.size(); // 0
 ```
 
-## Build
-```
+### Build
+lint + tests
+
+```sh
 grunt build
 ```
 
