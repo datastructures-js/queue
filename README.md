@@ -59,7 +59,7 @@ adds an element at the back of the queue.
  <tr>
   <td>O(1)</td>
   <td>
-   <b>element</b>: {object}
+   element: {object}
   </td>
  </tr>
 </table>
@@ -175,6 +175,19 @@ console.log(queue.size()); // 1
 ### .toArray() 
 returns the remaining elements as an array.
 
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   {array}
+  </td>
+ </tr>
+</table>
+
 ```js
 queue.enqueue(4);
 queue.enqueue(2);
@@ -183,6 +196,15 @@ console.log(queue.toArray()); // [20, 4, 2]
 
 ### .clear()
 clears all elements from the queue.
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+ </tr>
+</table>
 
 ```js
 queue.clear();
