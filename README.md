@@ -12,8 +12,8 @@ A highly performant queue implementation in javascript.
   * [require](#require)
   * [import](#import)
   * [Creating a Queue](#create-a-queue)
-    * Empty Queue
-    * From an Existing Array
+    * [Empty Queue](#empty-queue)
+    * [From an Existing Array](#from-an-existing-array)
   * [.enqueue(element)](#enqueueelement)
   * [.front()](#front)
   * [.back()](#back)
@@ -64,7 +64,7 @@ const queue = Queue.fromArray([]);
  <tr>
   <td>O(1)</td>
   <td>
-   list: {array\<object\>}
+   list: {array&lt;object&gt;}
   </td>
  </tr>
 </table>
