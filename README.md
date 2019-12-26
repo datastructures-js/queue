@@ -12,6 +12,8 @@ A highly performant queue implementation in javascript.
   * [require](#require)
   * [import](#import)
   * [Creating a Queue](#create-a-queue)
+    * Empty Queue
+    * From an Existing Array
   * [.enqueue(element)](#enqueueelement)
   * [.front()](#front)
   * [.back()](#back)
@@ -44,8 +46,43 @@ import Queue from '@datastructures-js/queue';
 
 ### Create a Queue
 
+#### empty queue
 ```js
 const queue = new Queue();
+
+// OR
+
+const queue = Queue.fromArray([]);
+```
+
+#### from an existing array
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>params</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+  <td>
+   list: {array\<object\>}
+  </td>
+ </tr>
+</table>
+
+```js
+const list = [10, 3, 8, 40, 1];
+
+const queue = new Queue(list);
+
+// OR
+
+const queue = Queue.fromArray(list);
+```
+
+If the list should not be mutated, simply construct the queue from a copy of it.
+
+```js
+const queue = new Queue(list.slice(0));
 ```
 
 ### .enqueue(element)
@@ -172,6 +209,32 @@ returns the number of elements in the queue.
 console.log(queue.size()); // 1
 ```
 
+### .clone() 
+clones the queue. The clone has a shallow copy of the array.
+
+<table>
+ <tr>
+  <th>runtime</th>
+  <th>return</th>
+ </tr>
+ <tr>
+  <td>O(n)</td>
+  <td>
+   {Queue}
+  </td>
+ </tr>
+</table>
+
+```js
+const queue = Queue.fromArray([{ id: 2 }, { id: 4 } , { id: 8 }]);
+const clone =  queue.clone();
+
+clone.dequeue();
+
+console.log(queue.front()); // { id: 2 }
+console.log(clone.front()); // { id: 4 }
+```
+
 ### .toArray() 
 returns the remaining elements as an array.
 
@@ -181,7 +244,7 @@ returns the remaining elements as an array.
   <th>return</th>
  </tr>
  <tr>
-  <td>O(1)</td>
+  <td>O(n)</td>
   <td>
    {array}
   </td>
