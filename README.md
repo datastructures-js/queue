@@ -169,7 +169,7 @@ console.log(queue.front()); // 20
 
 Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n<sup>2</sup>)</b> if using shift(). 
 
-Here's a benchmark
+<u>Here's a benchmark</u>
 
 <table>
  <tr><td colspan="2">Benchmark of dequeuing <b>1 million elements</b> in Node v12</td></tr>
