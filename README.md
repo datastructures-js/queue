@@ -210,7 +210,7 @@ console.log(queue.size()); // 1
 ```
 
 ### .clone() 
-creates a shallow clone from the queue.
+creates a shallow copy of the queue.
 
 <table>
  <tr>
