@@ -155,14 +155,14 @@ dequeue the front element in the queue. It does not use *.shift()* to dequeue an
   <th>return</th>
  </tr>
  <tr>
-  <td>O(1) / O(n/2^k)</td>
+  <td>O(1) / O(n/2<sup>k</sup>)</td>
   <td>
    {object}
   </td>
  </tr>
 </table>
 
-Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n^2)</b> if using shift(). 
+Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n<sup>2</sup>)</b> if using shift(). 
 
 ```js
 console.log(queue.dequeue()); // 10
