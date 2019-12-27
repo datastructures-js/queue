@@ -210,7 +210,7 @@ console.log(queue.size()); // 1
 ```
 
 ### .clone() 
-clones the queue. The clone has a shallow copy of the array.
+creates a shallow clone from the queue.
 
 <table>
  <tr>
@@ -236,7 +236,7 @@ console.log(clone.front()); // { id: 4 }
 ```
 
 ### .toArray() 
-returns the remaining elements as an array.
+returns a copy of the remaining elements' array.
 
 <table>
  <tr>
