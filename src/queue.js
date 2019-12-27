@@ -101,7 +101,7 @@ class Queue {
   }
 
   /**
-   * creates a shallow clone from the queue
+   * creates a shallow copy from the queue
    * @public
    * @return {Queue}
    */
