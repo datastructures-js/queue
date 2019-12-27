@@ -236,7 +236,7 @@ console.log(clone.front()); // { id: 4 }
 ```
 
 ### .toArray() 
-returns a copy of the remaining elements' array.
+returns a copy of the remaining elements as an array.
 
 <table>
  <tr>
