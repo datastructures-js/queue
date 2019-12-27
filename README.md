@@ -162,12 +162,21 @@ dequeue the front element in the queue. It does not use *.shift()* to dequeue an
  </tr>
 </table>
 
-Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n<sup>2</sup>)</b> if using shift(). 
-
 ```js
 console.log(queue.dequeue()); // 10
 console.log(queue.front()); // 20
 ```
+
+Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n<sup>2</sup>)</b> if using shift(). 
+
+Here's a benchmark
+
+<table>
+  <tr colspan="2">Benchmark of dequeuing 1 million elements in Node v12</tr>
+  <tr><td>.dequeue()</td><td>.shift()</td></tr>
+  <tr><td>40 ms</td><td>3 minutes</td></tr>
+</table>
+
 
 ### .isEmpty()
 checks if the queue is empty.
