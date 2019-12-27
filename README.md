@@ -172,8 +172,8 @@ Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n<sup>2</sup>)<
 Here's a benchmark
 
 <table>
-  <tr colspan="2">Benchmark of dequeuing 1 million elements in Node v12</tr>
-  <tr><td>.dequeue()</td><td>.shift()</td></tr>
+ <tr><td colspan="2">Benchmark of dequeuing 1 million elements in Node v12</td></tr>
+ <tr><td><b>.dequeue()</b></td><td><b>.shift()</b></td></tr>
   <tr><td>40 ms</td><td>3 minutes</td></tr>
 </table>
 
