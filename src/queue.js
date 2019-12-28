@@ -9,7 +9,7 @@
  */
 class Queue {
   /**
-   * @param {array} element
+   * @param {array} elements
    * @public
    */
   constructor(elements) {
