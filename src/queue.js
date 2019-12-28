@@ -8,8 +8,12 @@
  * @class Queue
  */
 class Queue {
-  constructor() {
-    this.elements = [];
+  /**
+   * @param {array} elements
+   * @public
+   */
+  constructor(elements) {
+    this.elements = Array.isArray(elements) ? elements : [];
     this.offset = 0;
   }
 
@@ -94,6 +98,26 @@ class Queue {
   clear() {
     this.elements = [];
     this.offset = 0;
+  }
+
+  /**
+   * creates a shallow copy from the queue
+   * @public
+   * @return {Queue}
+   */
+  clone() {
+    return new Queue(this.elements.slice(this.offset));
+  }
+
+  /**
+   * creates a queue from an existing array
+   * @public
+   * @static
+   * @param {array} elements
+   * @return {Queue}
+   */
+  static fromArray(elements) {
+    return new Queue(elements);
   }
 }
 
