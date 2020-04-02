@@ -1,16 +1,17 @@
 /**
- * datastructures-js/queue
- * @copyright 2019 Eyas Ranjous <eyas.ranjous@gmail.com>
+ * @datastructures-js/queue
+ * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
  * @license MIT
  */
 
 /**
  * @class Queue
+ * implements FIFO principle.
  */
 class Queue {
   /**
+   * @constructor
    * @param {array} elements
-   * @public
    */
   constructor(elements) {
     this.elements = Array.isArray(elements) ? elements : [];
@@ -18,17 +19,17 @@ class Queue {
   }
 
   /**
-   * add an element at the back of the queue
-   * @param {object} element
    * @public
+   * adds an element at the back of the queue
+   * @param {object} element
    */
   enqueue(element) {
     this.elements.push(element);
   }
 
   /**
-   * dequeue the front element in the queue
    * @public
+   * dequeue the front element of the queue
    * @returns {object}
    */
   dequeue() {
@@ -47,8 +48,8 @@ class Queue {
   }
 
   /**
-   * peeks on the front element of the queue
    * @public
+   * peeks on the front element of the queue
    * @returns {object}
    */
   front() {
@@ -56,7 +57,7 @@ class Queue {
   }
 
   /**
-   * peeks on the back element in the queue
+   * peeks on the back element of the queue
    * @public
    * @returns {object}
    */
@@ -65,8 +66,8 @@ class Queue {
   }
 
   /**
-   * returns the number of elements in the queue
    * @public
+   * returns the number of elements in the queue
    * @returns {number}
    */
   size() {
@@ -74,8 +75,8 @@ class Queue {
   }
 
   /**
-   * checks if the queue is empty
    * @public
+   * checks if the queue is empty
    * @returns {boolean}
    */
   isEmpty() {
@@ -83,8 +84,8 @@ class Queue {
   }
 
   /**
-   * returns the remaining elements as an array
    * @public
+   * returns the remaining elements in the queue as an array
    * @returns {array}
    */
   toArray() {
@@ -92,8 +93,8 @@ class Queue {
   }
 
   /**
-   * clears all elements from the queue
    * @public
+   * clears all elements from the queue
    */
   clear() {
     this.elements = [];
@@ -101,8 +102,8 @@ class Queue {
   }
 
   /**
-   * creates a shallow copy from the queue
    * @public
+   * creates a shallow copy of the queue
    * @return {Queue}
    */
   clone() {
@@ -110,9 +111,9 @@ class Queue {
   }
 
   /**
-   * creates a queue from an existing array
    * @public
    * @static
+   * creates a queue from an existing array
    * @param {array} elements
    * @return {Queue}
    */
