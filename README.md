@@ -77,18 +77,18 @@ const queue = new Queue(list.slice(0));
 adds an element at the back of the queue.
 
 <table>
+  <tr><th align="center" colspan="2">params</th></tr>
+  <tr><td>name</td><td>type</td></tr>
+  <tr><td>element</td><td>object</td></tr>
+</table>
+
+<table>
  <tr>
   <th>runtime</th>
  </tr>
  <tr>
   <td>O(1)</td>
  </tr>
-</table>
-
-<table>
-  <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td>name</td><td>type</td></tr>
-  <tr><td>element</td><td>object</td></tr>
 </table>
 
 #### Example
