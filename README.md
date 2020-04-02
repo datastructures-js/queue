@@ -76,18 +76,24 @@ const queue = new Queue(list.slice(0));
 ### .enqueue(element)
 adds an element at the back of the queue.
 
+#### runtime
+O(1)
+
+#### params
 <table>
  <tr>
-  <th>runtime</th>
-  <th>params</th>
+  <th>name</th>
+  <th>type</th>
  </tr>
  <tr>
-  <td>O(1)</td>
+  <td>element</td>
   <td>
-   element: {object}
+   object
   </td>
  </tr>
 </table>
+
+#### Example
 
 ```js
 queue.enqueue(10);
