@@ -59,7 +59,7 @@ const queue = new Queue([1, 2, 3]);
 
 #### using "Queue.fromArray(array)"
 
-#### Example
+##### Example
 
 ```js
 // empty queue
