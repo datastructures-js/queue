@@ -86,7 +86,8 @@ adds an element at the back of the queue.
 </table>
 
 <table>
-  <tr><th>name</th><th>type</th></tr>
+  <tr><td cellspan="2"></td></tr>
+  <tr><td>name</td><td>type</td></tr>
   <tr><td>element</td><td>object</td></tr>
 </table>
 
