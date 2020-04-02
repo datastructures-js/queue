@@ -103,16 +103,23 @@ peeks on the front element of the queue.
 
 <table>
  <tr>
-  <th>runtime</th>
   <th>return</th>
  </tr>
  <tr>
-  <td>O(1)</td>
-  <td>
-   {object}
-  </td>
+  <td>object</td>
  </tr>
 </table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+ </tr>
+</table>
+
+#### Example
 
 ```js
 console.log(queue.front()); // 10
@@ -123,16 +130,23 @@ peeks on the back element in the queue.
 
 <table>
  <tr>
-  <th>runtime</th>
   <th>return</th>
  </tr>
  <tr>
-  <td>O(1)</td>
-  <td>
-   {object}
-  </td>
+  <td>object</td>
  </tr>
 </table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+ </tr>
+</table>
+
+#### Example
 
 ```js
 console.log(queue.back()); // 20
@@ -143,16 +157,23 @@ dequeue the front element in the queue. It does not use *.shift()* to dequeue an
 
 <table>
  <tr>
-  <th>runtime</th>
   <th>return</th>
  </tr>
  <tr>
-  <td>O(1) / O(n/2<sup>k</sup>)</td>
-  <td>
-   {object}
-  </td>
+  <td>object</td>
  </tr>
 </table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(1) / O(n/2<sup>k</sup>)</td>
+ </tr>
+</table>
+
+#### Example
 
 ```js
 console.log(queue.dequeue()); // 10
@@ -175,16 +196,23 @@ checks if the queue is empty.
 
 <table>
  <tr>
-  <th>runtime</th>
   <th>return</th>
  </tr>
  <tr>
-  <td>O(1)</td>
-  <td>
-   {boolean}
-  </td>
+  <td>boolean</td>
  </tr>
 </table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+ </tr>
+</table>
+
+#### Example
 
 ```js
 console.log(queue.isEmpty()); // false
@@ -195,16 +223,23 @@ returns the number of elements in the queue.
 
 <table>
  <tr>
-  <th>runtime</th>
   <th>return</th>
  </tr>
  <tr>
-  <td>O(1)</td>
-  <td>
-   {number}
-  </td>
+  <td>number</td>
  </tr>
 </table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(1)</td>
+ </tr>
+</table>
+
+#### Example
 
 ```js
 console.log(queue.size()); // 1
@@ -215,16 +250,23 @@ creates a shallow copy of the queue.
 
 <table>
  <tr>
-  <th>runtime</th>
   <th>return</th>
  </tr>
  <tr>
-  <td>O(n)</td>
-  <td>
-   {Queue}
-  </td>
+  <td>Queue</td>
  </tr>
 </table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(n)</td>
+ </tr>
+</table>
+
+#### Example
 
 ```js
 const queue = Queue.fromArray([{ id: 2 }, { id: 4 } , { id: 8 }]);
@@ -241,16 +283,23 @@ returns a copy of the remaining elements as an array.
 
 <table>
  <tr>
-  <th>runtime</th>
   <th>return</th>
  </tr>
  <tr>
-  <td>O(n)</td>
-  <td>
-   {array}
-  </td>
+  <td>array</td>
  </tr>
 </table>
+
+<table>
+ <tr>
+  <th>runtime</th>
+ </tr>
+ <tr>
+  <td>O(n)</td>
+ </tr>
+</table>
+
+#### Example
 
 ```js
 queue.enqueue(4);
@@ -269,6 +318,8 @@ clears all elements from the queue.
   <td>O(1)</td>
  </tr>
 </table>
+
+#### Example
 
 ```js
 queue.clear();
