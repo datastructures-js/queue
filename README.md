@@ -11,9 +11,7 @@ A highly performant queue implementation in javascript.
 * [API](#api)
   * [require](#require)
   * [import](#import)
-  * [Creating a Queue](#create-a-queue)
-    * [Empty Queue](#empty-queue)
-    * [From an Existing Array](#from-an-existing-array)
+  * [Construction](#construction)
   * [.enqueue(element)](#enqueueelement)
   * [.front()](#front)
   * [.back()](#back)
@@ -23,6 +21,7 @@ A highly performant queue implementation in javascript.
   * [.toArray()](#toarray)
   * [.clear()](#clear)
  * [Build](#build)
+ * [License](#license)
 
 ## Install
 
@@ -44,44 +43,33 @@ const Queue = require('@datastructures-js/queue');
 import Queue from '@datastructures-js/queue';
 ```
 
-### Create a Queue
+### Construction
 
-#### empty queue
+#### using "new Queue(array)"
+
+##### Example
+
 ```js
+// empty queue
 const queue = new Queue();
 
-// OR
+// from an array
+const queue = new Queue([1, 2, 3]);
+```
 
+#### using "Queue.fromArray(array)"
+
+#### Example
+
+```js
+// empty queue
 const queue = Queue.fromArray([]);
-```
 
-#### from an existing array
-<table>
- <tr>
-  <th>runtime</th>
-  <th>params</th>
- </tr>
- <tr>
-  <td>O(1)</td>
-  <td>
-   list: {array&lt;object&gt;}
-  </td>
- </tr>
-</table>
-
-```js
+// with elements
 const list = [10, 3, 8, 40, 1];
-
-const queue = new Queue(list);
-
-// OR
-
 const queue = Queue.fromArray(list);
-```
 
-If the list should not be mutated, simply construct the queue from a copy of it.
-
-```js
+// If the list should not be mutated, simply construct the queue from a copy of it.
 const queue = new Queue(list.slice(0));
 ```
 
