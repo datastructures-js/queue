@@ -169,7 +169,7 @@ dequeue the front element in the queue. It does not use *.shift()* to dequeue an
   <th>runtime</th>
  </tr>
  <tr>
-  <td>O(1) / O(n/2<sup>k</sup>)</td>
+  <td>O(n*log(n))</td>
  </tr>
 </table>
 
