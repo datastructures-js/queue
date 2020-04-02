@@ -1,81 +1,82 @@
 /**
- * datastructures-js/queue
- * @copyright 2019 Eyas Ranjous <eyas.ranjous@gmail.com>
+ * @datastructures-js/queue
+ * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
  * @license MIT
  */
 
 /**
  * @class Queue
+ * implements FIFO principle.
  */
 class Queue {
   /**
+   * @constructor
    * @param {array} elements
-   * @public
    */
   constructor(elements) {
-    this.elements = Array.isArray(elements) ? elements : [];
-    this.offset = 0;
+    this._elements = Array.isArray(elements) ? elements : [];
+    this._offset = 0;
   }
 
   /**
-   * add an element at the back of the queue
-   * @param {object} element
    * @public
+   * adds an element at the back of the queue
+   * @param {object} element
    */
   enqueue(element) {
-    this.elements.push(element);
+    this._elements.push(element);
   }
 
   /**
-   * dequeue the front element in the queue
    * @public
+   * dequeue the front element of the queue
    * @returns {object}
    */
   dequeue() {
     if (this.size() === 0) return null;
 
     const first = this.front();
-    this.offset += 1;
+    this._offset += 1;
 
-    if (this.offset * 2 < this.elements.length) return first;
+    if (this._offset * 2 < this._elements.length) return first;
 
     // only remove dequeued elements when reaching half size
     // to decrease latency of shifting elements
-    this.elements = this.elements.slice(this.offset);
-    this.offset = 0;
+    this._elements = this._elements.slice(this._offset);
+    this._offset = 0;
     return first;
   }
 
   /**
-   * peeks on the front element of the queue
    * @public
+   * peeks on the front element of the queue
    * @returns {object}
    */
   front() {
-    return this.size() > 0 ? this.elements[this.offset] : null;
+    return this.size() > 0 ? this._elements[this._offset] : null;
   }
 
   /**
-   * peeks on the back element in the queue
+   * peeks on the back element of the queue
    * @public
    * @returns {object}
    */
   back() {
-    return this.size() > 0 ? this.elements[this.elements.length - 1] : null;
+    return this.size() > 0 ? this._elements[this._elements.length - 1] : null;
   }
 
   /**
-   * returns the number of elements in the queue
    * @public
+   * returns the number of elements in the queue
    * @returns {number}
    */
   size() {
-    return this.elements.length - this.offset;
+    return this._elements.length - this._offset;
   }
 
   /**
-   * checks if the queue is empty
    * @public
+   * checks if the queue is empty
    * @returns {boolean}
    */
   isEmpty() {
@@ -83,36 +84,36 @@ class Queue {
   }
 
   /**
-   * returns the remaining elements as an array
    * @public
+   * returns the remaining elements in the queue as an array
    * @returns {array}
    */
   toArray() {
-    return this.elements.slice(this.offset);
+    return this._elements.slice(this._offset);
   }
 
   /**
-   * clears all elements from the queue
    * @public
+   * clears all elements from the queue
    */
   clear() {
-    this.elements = [];
-    this.offset = 0;
+    this._elements = [];
+    this._offset = 0;
   }
 
   /**
-   * creates a shallow copy from the queue
    * @public
+   * creates a shallow copy of the queue
    * @return {Queue}
    */
   clone() {
-    return new Queue(this.elements.slice(this.offset));
+    return new Queue(this._elements.slice(this._offset));
   }
 
   /**
-   * creates a queue from an existing array
    * @public
    * @static
+   * creates a queue from an existing array
    * @param {array} elements
    * @return {Queue}
    */

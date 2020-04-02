@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.1] - 2019-04-02
+### Fixed
+- README & jsdoc
+
 ## [3.1.0] - 2019-12-28
 ### Added
 - `.clone()` to create a shallow copy of the queue.
