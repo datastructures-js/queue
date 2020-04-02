@@ -79,17 +79,15 @@ adds an element at the back of the queue.
 <table>
  <tr>
   <th>runtime</th>
-  <th>params</th>
  </tr>
  <tr>
   <td>O(1)</td>
-  <td>
-   <table>
-     <tr><td>name</td><td>type</td></tr>
-     <tr><td>element</td><td>object</td></tr>
-   </table>
-  </td>
  </tr>
+</table>
+
+<table>
+  <tr><th>name</th><th>type</th></tr>
+  <tr><td>element</td><td>object</td></tr>
 </table>
 
 #### Example
