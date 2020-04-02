@@ -14,8 +14,8 @@ class Queue {
    * @param {array} elements
    */
   constructor(elements) {
-    this.elements = Array.isArray(elements) ? elements : [];
-    this.offset = 0;
+    this._elements = Array.isArray(elements) ? elements : [];
+    this._offset = 0;
   }
 
   /**
@@ -24,7 +24,7 @@ class Queue {
    * @param {object} element
    */
   enqueue(element) {
-    this.elements.push(element);
+    this._elements.push(element);
   }
 
   /**
@@ -36,14 +36,14 @@ class Queue {
     if (this.size() === 0) return null;
 
     const first = this.front();
-    this.offset += 1;
+    this._offset += 1;
 
-    if (this.offset * 2 < this.elements.length) return first;
+    if (this._offset * 2 < this._elements.length) return first;
 
     // only remove dequeued elements when reaching half size
     // to decrease latency of shifting elements
-    this.elements = this.elements.slice(this.offset);
-    this.offset = 0;
+    this._elements = this._elements.slice(this._offset);
+    this._offset = 0;
     return first;
   }
 
@@ -53,7 +53,7 @@ class Queue {
    * @returns {object}
    */
   front() {
-    return this.size() > 0 ? this.elements[this.offset] : null;
+    return this.size() > 0 ? this._elements[this._offset] : null;
   }
 
   /**
@@ -62,7 +62,7 @@ class Queue {
    * @returns {object}
    */
   back() {
-    return this.size() > 0 ? this.elements[this.elements.length - 1] : null;
+    return this.size() > 0 ? this._elements[this._elements.length - 1] : null;
   }
 
   /**
@@ -71,7 +71,7 @@ class Queue {
    * @returns {number}
    */
   size() {
-    return this.elements.length - this.offset;
+    return this._elements.length - this._offset;
   }
 
   /**
@@ -89,7 +89,7 @@ class Queue {
    * @returns {array}
    */
   toArray() {
-    return this.elements.slice(this.offset);
+    return this._elements.slice(this._offset);
   }
 
   /**
@@ -97,8 +97,8 @@ class Queue {
    * clears all elements from the queue
    */
   clear() {
-    this.elements = [];
-    this.offset = 0;
+    this._elements = [];
+    this._offset = 0;
   }
 
   /**
@@ -107,7 +107,7 @@ class Queue {
    * @return {Queue}
    */
   clone() {
-    return new Queue(this.elements.slice(this.offset));
+    return new Queue(this._elements.slice(this._offset));
   }
 
   /**
