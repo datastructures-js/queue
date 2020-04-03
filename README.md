@@ -78,7 +78,7 @@ adds an element at the back of the queue.
 
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
-  <tr><td>name</td><td>type</td></tr>
+ <tr><td><b>name</b></td><td><b>type</b></td></tr>
   <tr><td>element</td><td>object</td></tr>
 </table>
 
