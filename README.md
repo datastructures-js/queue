@@ -70,7 +70,7 @@ const list = [10, 3, 8, 40, 1];
 const queue = Queue.fromArray(list);
 
 // If the list should not be mutated, simply construct the queue from a copy of it.
-const queue = new Queue(list.slice(0));
+const queue = Queue.fromArray(list.slice(0));
 ```
 
 ### .enqueue(element)
