@@ -18,6 +18,7 @@ A performant queue implementation in javascript.
   * [.dequeue()](#dequeue)
   * [.isEmpty()](#isEmpty)
   * [.size()](#size)
+  * [.clone()](#clone)
   * [.toArray()](#toarray)
   * [.clear()](#clear)
 * [Build](#build)
