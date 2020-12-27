@@ -4,13 +4,13 @@
 [![npm](https://img.shields.io/npm/v/@datastructures-js/queue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/queue.svg)](https://www.npmjs.com/packages/@datastructures-js/queue) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 
-A highly performant queue implementation in javascript.
+A performant queue implementation in javascript.
 
 # Table of Contents
 * [Install](#install)
+* [require](#require)
+* [import](#import)
 * [API](#api)
-  * [require](#require)
-  * [import](#import)
   * [Construction](#construction)
   * [.enqueue(element)](#enqueueelement)
   * [.front()](#front)
@@ -18,10 +18,11 @@ A highly performant queue implementation in javascript.
   * [.dequeue()](#dequeue)
   * [.isEmpty()](#isEmpty)
   * [.size()](#size)
+  * [.clone()](#clone)
   * [.toArray()](#toarray)
   * [.clear()](#clear)
- * [Build](#build)
- * [License](#license)
+* [Build](#build)
+* [License](#license)
 
 ## Install
 
@@ -29,25 +30,23 @@ A highly performant queue implementation in javascript.
 npm install --save @datastructures-js/queue
 ```
 
-## API
-
-### require
+## require
 
 ```js
 const Queue = require('@datastructures-js/queue');
 ```
 
-### import
+## import
 
 ```js
 import Queue from '@datastructures-js/queue';
 ```
 
+## API
+
 ### Construction
 
-#### using "new Queue(array)"
-
-##### Example
+#### using "new"
 
 ```js
 // empty queue
@@ -57,9 +56,7 @@ const queue = new Queue();
 const queue = new Queue([1, 2, 3]);
 ```
 
-#### using "Queue.fromArray(array)"
-
-##### Example
+#### using ".fromArray"
 
 ```js
 // empty queue
@@ -69,8 +66,8 @@ const queue = Queue.fromArray([]);
 const list = [10, 3, 8, 40, 1];
 const queue = Queue.fromArray(list);
 
-// If the list should not be mutated, simply construct the queue from a copy of it.
-const queue = Queue.fromArray(list.slice(0));
+// If the list should not be mutated, use a copy of it.
+const queue = Queue.fromArray(list.slice());
 ```
 
 ### .enqueue(element)
@@ -79,7 +76,7 @@ adds an element at the back of the queue.
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
  <tr><td><b>name</b></td><td><b>type</b></td></tr>
-  <tr><td>element</td><td>object</td></tr>
+  <tr><td>element</td><td>any</td></tr>
 </table>
 
 <table>
@@ -106,7 +103,7 @@ peeks on the front element of the queue.
   <th>return</th>
  </tr>
  <tr>
-  <td>object</td>
+  <td>any</td>
  </tr>
 </table>
 
@@ -133,7 +130,7 @@ peeks on the back element in the queue.
   <th>return</th>
  </tr>
  <tr>
-  <td>object</td>
+  <td>any</td>
  </tr>
 </table>
 
@@ -160,7 +157,7 @@ dequeue the front element in the queue. It does not use *.shift()* to dequeue an
   <th>return</th>
  </tr>
  <tr>
-  <td>object</td>
+  <td>any</td>
  </tr>
 </table>
 
@@ -180,16 +177,15 @@ console.log(queue.dequeue()); // 10
 console.log(queue.front()); // 20
 ```
 
-Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n<sup>2</sup>)</b> if using shift(). 
+Dequeuing all elements takes <i>O(n\*log(n))</i> instead of <i>O(n<sup>2</sup>)</i> if using shift(). 
 
-Here's a benchmark:
+benchmark:
 
 <table>
  <tr><td colspan="2">dequeuing <b>1 million elements</b> in Node v12</td></tr>
  <tr><td><b>.dequeue()</b></td><td><b>.shift()</b></td></tr>
   <tr><td>~ 40 ms</td><td>~ 3 minutes</td></tr>
 </table>
-
 
 ### .isEmpty()
 checks if the queue is empty.

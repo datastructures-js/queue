@@ -1,17 +1,13 @@
 /**
- * @datastructures-js/queue
- * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
  * @license MIT
- */
-
-/**
- * @class Queue
- * implements FIFO principle.
+ * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
+ *
+ * @class
  */
 class Queue {
   /**
-   * @constructor
-   * @param {array} elements
+   * Creates a queue.
+   * @param {array} [elements]
    */
   constructor(elements) {
     this._elements = Array.isArray(elements) ? elements : [];
@@ -19,18 +15,18 @@ class Queue {
   }
 
   /**
+   * Adds an element at the back of the queue.
    * @public
-   * adds an element at the back of the queue
-   * @param {object} element
+   * @param {any} element
    */
   enqueue(element) {
     this._elements.push(element);
   }
 
   /**
+   * Dequeues the front element in the queue.
    * @public
-   * dequeue the front element of the queue
-   * @returns {object}
+   * @returns {any}
    */
   dequeue() {
     if (this.size() === 0) return null;
@@ -41,33 +37,33 @@ class Queue {
     if (this._offset * 2 < this._elements.length) return first;
 
     // only remove dequeued elements when reaching half size
-    // to decrease latency of shifting elements
+    // to decrease latency of shifting elements.
     this._elements = this._elements.slice(this._offset);
     this._offset = 0;
     return first;
   }
 
   /**
+   * Returns the front element of the queue.
    * @public
-   * peeks on the front element of the queue
-   * @returns {object}
+   * @returns {any}
    */
   front() {
     return this.size() > 0 ? this._elements[this._offset] : null;
   }
 
   /**
-   * peeks on the back element of the queue
+   * Returns the back element of the queue.
    * @public
-   * @returns {object}
+   * @returns {any}
    */
   back() {
     return this.size() > 0 ? this._elements[this._elements.length - 1] : null;
   }
 
   /**
+   * Returns the number of elements in the queue.
    * @public
-   * returns the number of elements in the queue
    * @returns {number}
    */
   size() {
@@ -75,8 +71,8 @@ class Queue {
   }
 
   /**
+   * Checks if the queue is empty.
    * @public
-   * checks if the queue is empty
    * @returns {boolean}
    */
   isEmpty() {
@@ -84,8 +80,8 @@ class Queue {
   }
 
   /**
+   * Returns the remaining elements in the queue as an array.
    * @public
-   * returns the remaining elements in the queue as an array
    * @returns {array}
    */
   toArray() {
@@ -93,8 +89,8 @@ class Queue {
   }
 
   /**
+   * Clears the queue.
    * @public
-   * clears all elements from the queue
    */
   clear() {
     this._elements = [];
@@ -102,8 +98,8 @@ class Queue {
   }
 
   /**
+   * Creates a shallow copy of the queue.
    * @public
-   * creates a shallow copy of the queue
    * @return {Queue}
    */
   clone() {
@@ -111,9 +107,9 @@ class Queue {
   }
 
   /**
+   * Creates a queue from an existing array.
    * @public
    * @static
-   * creates a queue from an existing array
    * @param {array} elements
    * @return {Queue}
    */
