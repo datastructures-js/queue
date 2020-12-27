@@ -65,8 +65,8 @@ const queue = Queue.fromArray([]);
 const list = [10, 3, 8, 40, 1];
 const queue = Queue.fromArray(list);
 
-// If the list should not be mutated, simply construct the queue from a copy of it.
-const queue = Queue.fromArray(list.slice(0));
+// If the list should not be mutated, use a copy of it.
+const queue = Queue.fromArray(list.slice());
 ```
 
 ### .enqueue(element)
