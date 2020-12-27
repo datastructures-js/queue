@@ -4,13 +4,13 @@
 [![npm](https://img.shields.io/npm/v/@datastructures-js/queue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 [![npm](https://img.shields.io/npm/dm/@datastructures-js/queue.svg)](https://www.npmjs.com/packages/@datastructures-js/queue) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/@datastructures-js/queue)
 
-A highly performant queue implementation in javascript.
+A performant queue implementation in javascript.
 
 # Table of Contents
 * [Install](#install)
+* [require](#require)
+* [import](#import)
 * [API](#api)
-  * [require](#require)
-  * [import](#import)
   * [Construction](#construction)
   * [.enqueue(element)](#enqueueelement)
   * [.front()](#front)
@@ -20,8 +20,8 @@ A highly performant queue implementation in javascript.
   * [.size()](#size)
   * [.toArray()](#toarray)
   * [.clear()](#clear)
- * [Build](#build)
- * [License](#license)
+* [Build](#build)
+* [License](#license)
 
 ## Install
 
@@ -29,25 +29,23 @@ A highly performant queue implementation in javascript.
 npm install --save @datastructures-js/queue
 ```
 
-## API
-
-### require
+## require
 
 ```js
 const Queue = require('@datastructures-js/queue');
 ```
 
-### import
+## import
 
 ```js
 import Queue from '@datastructures-js/queue';
 ```
 
+## API
+
 ### Construction
 
-#### using "new Queue(array)"
-
-##### Example
+#### using "new"
 
 ```js
 // empty queue
@@ -57,9 +55,7 @@ const queue = new Queue();
 const queue = new Queue([1, 2, 3]);
 ```
 
-#### using "Queue.fromArray(array)"
-
-##### Example
+#### using ".fromArray"
 
 ```js
 // empty queue
@@ -79,7 +75,7 @@ adds an element at the back of the queue.
 <table>
   <tr><th align="center" colspan="2">params</th></tr>
  <tr><td><b>name</b></td><td><b>type</b></td></tr>
-  <tr><td>element</td><td>object</td></tr>
+  <tr><td>element</td><td>any</td></tr>
 </table>
 
 <table>
@@ -106,7 +102,7 @@ peeks on the front element of the queue.
   <th>return</th>
  </tr>
  <tr>
-  <td>object</td>
+  <td>any</td>
  </tr>
 </table>
 
@@ -133,7 +129,7 @@ peeks on the back element in the queue.
   <th>return</th>
  </tr>
  <tr>
-  <td>object</td>
+  <td>any</td>
  </tr>
 </table>
 
@@ -160,7 +156,7 @@ dequeue the front element in the queue. It does not use *.shift()* to dequeue an
   <th>return</th>
  </tr>
  <tr>
-  <td>object</td>
+  <td>any</td>
  </tr>
 </table>
 
