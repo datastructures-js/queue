@@ -176,7 +176,7 @@ console.log(queue.dequeue()); // 10
 console.log(queue.front()); // 20
 ```
 
-Dequeuing all elements takes <b>O(n\*log(n))</b> instead of <b>O(n<sup>2</sup>)</b> if using shift(). 
+Dequeuing all elements takes <i>O(n\*log(n))</i> instead of <i>O(n<sup>2</sup>)</i> if using shift(). 
 
 benchmark:
 
