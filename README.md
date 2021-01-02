@@ -87,8 +87,7 @@ adds an element at the back of the queue.
 </table>
 
 ```js
-queue.enqueue(10);
-queue.enqueue(20);
+queue.enqueue(10).enqueue(20);
 ```
 
 ### .front()
@@ -232,8 +231,7 @@ returns a copy of the remaining elements as an array.
 </table>
 
 ```js
-queue.enqueue(4);
-queue.enqueue(2);
+queue.enqueue(4).enqueue(2);
 console.log(queue.toArray()); // [20, 4, 2]
 ```
 
