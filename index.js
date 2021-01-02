@@ -1,3 +1,3 @@
 const Queue = require('./src/queue');
 
-module.exports = Queue;
+exports.Queue = Queue;

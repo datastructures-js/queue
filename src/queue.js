@@ -21,6 +21,7 @@ class Queue {
    */
   enqueue(element) {
     this._elements.push(element);
+    return this;
   }
 
   /**

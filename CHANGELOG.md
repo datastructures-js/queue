@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.0] - 2021-01-02
+### Changed
+- `.enqueue` can now chain other queue methods.
+- named export for queue class.
+
+### Fixed
+- readme
+
 ## [3.1.4] - 2020-12-27
 ### Fixed
 - jsdoc
