@@ -220,7 +220,7 @@ creates a shallow copy of the queue.
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">Queue</td>
+    <td align="center">Queue&lt;T&gt;</td>
     <td align="center">O(n)</td>
   </tr>
 </table>
