@@ -6,12 +6,14 @@
 
 A performant queue implementation in javascript.
 
-# Table of Contents
+<img src="https://user-images.githubusercontent.com/6517308/121813242-859a9700-cc6b-11eb-99c0-49e5bb63005b.jpg">
+
+# Contents
 * [Install](#install)
-* [require](#require)
-* [import](#import)
+* [require](#js)
+* [import](#ts)
 * [API](#api)
-  * [Construction](#construction)
+  * [constructor](#constructor)
   * [.enqueue(element)](#enqueueelement)
   * [.front()](#front)
   * [.back()](#back)
@@ -30,13 +32,13 @@ A performant queue implementation in javascript.
 npm install --save @datastructures-js/queue
 ```
 
-## require
+### JS
 
 ```js
 const { Queue } = require('@datastructures-js/queue');
 ```
 
-## import
+### TS
 
 ```js
 import { Queue } from '@datastructures-js/queue';
@@ -44,10 +46,11 @@ import { Queue } from '@datastructures-js/queue';
 
 ## API
 
-### Construction
+### constructor
 
 #### using "new"
 
+##### JS
 ```js
 // empty queue
 const queue = new Queue();
@@ -56,8 +59,18 @@ const queue = new Queue();
 const queue = new Queue([1, 2, 3]);
 ```
 
+##### TS
+```js
+// empty queue
+const queue = new Queue<number>();
+
+// from an array
+const queue = new Queue<number>([1, 2, 3]);
+```
+
 #### using ".fromArray"
 
+##### JS
 ```js
 // empty queue
 const queue = Queue.fromArray([]);
@@ -70,7 +83,13 @@ const queue = Queue.fromArray(list);
 const queue = Queue.fromArray(list.slice());
 ```
 
-### .enqueue(element)
+##### TS
+```js
+// empty queue
+const queue = Queue.fromArray<number>([1, 2, 3]);
+```
+
+### .enqueue(element: T)
 adds an element at the back of the queue.
 
 <table>
@@ -80,8 +99,8 @@ adds an element at the back of the queue.
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">element: any</td>
-    <td align="center">Queue</td>
+    <td align="center">element: T</td>
+    <td align="center">Queue&lt;T&gt;</td>
     <td align="center">O(1)</td>
   </tr>
 </table>
@@ -99,7 +118,7 @@ peeks on the front element of the queue.
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">any</td>
+    <td align="center">T</td>
     <td align="center">O(1)</td>
   </tr>
 </table>
@@ -117,7 +136,7 @@ peeks on the back element in the queue.
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">any</td>
+    <td align="center">T</td>
     <td align="center">O(1)</td>
   </tr>
 </table>
@@ -135,7 +154,7 @@ dequeue the front element in the queue. It does not use *.shift()* to dequeue th
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">any</td>
+    <td align="center">T</td>
     <td align="center">O(n*log(n))</td>
   </tr>
 </table>
@@ -201,7 +220,7 @@ creates a shallow copy of the queue.
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">Queue</td>
+    <td align="center">Queue&lt;T&gt;</td>
     <td align="center">O(n)</td>
   </tr>
 </table>
@@ -225,7 +244,7 @@ returns a copy of the remaining elements as an array.
     <th align="center">runtime</th>
   </tr>
   <tr>
-    <td align="center">array</td>
+    <td align="center">T[]</td>
     <td align="center">O(n)</td>
   </tr>
 </table>
