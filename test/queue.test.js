@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const Queue = require('../src/queue');
+const { Queue } = require('../src/queue');
 
 describe('Queue unit tests', () => {
   let queue;
