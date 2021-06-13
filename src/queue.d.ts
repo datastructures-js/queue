@@ -4,6 +4,8 @@ export class Queue<T> {
   size(): number;
   enqueue(element: T): Queue<T>;
   dequeue(): T;
+  front(): T;
+  back(): T;
   toArray(): T[];
   clear(): void;
   clone(): Queue<T>;
