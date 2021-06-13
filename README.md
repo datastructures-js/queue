@@ -32,13 +32,13 @@ A performant queue implementation in javascript.
 npm install --save @datastructures-js/queue
 ```
 
-## JS
+### JS
 
 ```js
 const { Queue } = require('@datastructures-js/queue');
 ```
 
-## TS
+### TS
 
 ```js
 import { Queue } from '@datastructures-js/queue';
