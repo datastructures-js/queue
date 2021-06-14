@@ -10,10 +10,11 @@ A performant queue implementation in javascript.
 
 # Contents
 * [Install](#install)
-* [require](#js)
-* [import](#ts)
+* [require](#require)
+* [import](#import)
 * [API](#api)
   * [constructor](#constructor)
+  * [Queue.fromArray(elements)](#queuefromarrayelements)
   * [.enqueue(element)](#enqueueelement)
   * [.front()](#front)
   * [.back()](#back)
@@ -32,13 +33,13 @@ A performant queue implementation in javascript.
 npm install --save @datastructures-js/queue
 ```
 
-### JS
+### require
 
 ```js
 const { Queue } = require('@datastructures-js/queue');
 ```
 
-### TS
+### import
 
 ```js
 import { Queue } from '@datastructures-js/queue';
@@ -47,8 +48,6 @@ import { Queue } from '@datastructures-js/queue';
 ## API
 
 ### constructor
-
-#### using "new"
 
 ##### JS
 ```js
@@ -68,7 +67,7 @@ const queue = new Queue<number>();
 const queue = new Queue<number>([1, 2, 3]);
 ```
 
-#### using ".fromArray"
+### Queue.fromArray(elements)
 
 ##### JS
 ```js
@@ -87,9 +86,13 @@ const queue = Queue.fromArray(list.slice());
 ```js
 // empty queue
 const queue = Queue.fromArray<number>([1, 2, 3]);
+
+// with elements
+const list = [10, 3, 8, 40, 1];
+const queue = Queue.fromArray<number>(list);
 ```
 
-### .enqueue(element: T)
+### .enqueue(element)
 adds an element at the back of the queue.
 
 <table>
