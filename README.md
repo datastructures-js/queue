@@ -85,7 +85,7 @@ const queue = Queue.fromArray(list.slice());
 ##### TS
 ```js
 // empty queue
-const queue = Queue.fromArray<number>([1, 2, 3]);
+const queue = Queue.fromArray<number>([]);
 
 // with elements
 const list = [10, 3, 8, 40, 1];
