@@ -17,7 +17,7 @@ class Queue {
   /**
    * Adds an element at the back of the queue.
    * @public
-   * @param {any} element
+   * @param {number|string|object} element
    */
   enqueue(element) {
     this._elements.push(element);
@@ -27,7 +27,7 @@ class Queue {
   /**
    * Dequeues the front element in the queue.
    * @public
-   * @returns {any}
+   * @returns {number|string|object}
    */
   dequeue() {
     if (this.size() === 0) return null;
@@ -47,7 +47,7 @@ class Queue {
   /**
    * Returns the front element of the queue.
    * @public
-   * @returns {any}
+   * @returns {number|string|object}
    */
   front() {
     return this.size() > 0 ? this._elements[this._offset] : null;
@@ -56,7 +56,7 @@ class Queue {
   /**
    * Returns the back element of the queue.
    * @public
-   * @returns {any}
+   * @returns {number|string|object}
    */
   back() {
     return this.size() > 0 ? this._elements[this._elements.length - 1] : null;
