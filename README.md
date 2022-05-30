@@ -113,7 +113,7 @@ console.log(queue.back()); // 20
 ```
 
 ### dequeue (pop)
-dequeue the front element in the queue.
+removes and returns the front element of the queue.
 
 ```js
 console.log(queue.dequeue()); // 10 // or queue.pop()
