@@ -22,7 +22,7 @@ describe('Queue unit tests', () => {
     it('should enqueue 3 elements to the stack', () => {
       queue.enqueue(1);
       queue.enqueue(8);
-      queue.enqueue(45);
+      queue.push(45);
     });
   });
 
@@ -73,7 +73,7 @@ describe('Queue unit tests', () => {
   describe('dequeue()', () => {
     it('should dequeue all elements', () => {
       expect(queue.dequeue()).to.be.equal(8);
-      expect(queue.dequeue()).to.be.equal(45);
+      expect(queue.pop()).to.be.equal(45);
     });
   });
 
