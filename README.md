@@ -92,7 +92,7 @@ const queue = Queue.fromArray<number>(list);
 ```
 
 ### enqueue (push)
-adds an element at the back of the queue.
+adds an element to the back of the queue.
 
 ```js
 queue.enqueue(10).enqueue(20); // or queue.push(123)

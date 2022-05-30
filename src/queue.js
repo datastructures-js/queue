@@ -15,7 +15,7 @@ class Queue {
   }
 
   /**
-   * Adds an element at the back of the queue.
+   * Adds an element to the back of the queue.
    * @public
    * @param {number|string|object} element
    */
@@ -25,7 +25,7 @@ class Queue {
   }
 
   /**
-   * Adds an element at the back of the queue.
+   * Adds an element to the back of the queue.
    * @public
    * @param {number|string|object} element
    */
