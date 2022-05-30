@@ -14,10 +14,10 @@ A performant queue implementation in javascript.
 * [API](#api)
   * [constructor](#constructor)
   * [Queue.fromArray](#queuefromarray)
-  * [enqueue](#enqueue)
+  * [enqueue (push)](#enqueue-push)
   * [front](#front)
   * [back](#back)
-  * [dequeue](#dequeue)
+  * [dequeue (pop)](#dequeue-pop)
   * [isEmpty](#isEmpty)
   * [size](#size)
   * [clone](#clone)
@@ -91,11 +91,11 @@ const list = [10, 3, 8, 40, 1];
 const queue = Queue.fromArray<number>(list);
 ```
 
-### enqueue
+### enqueue (push)
 adds an element at the back of the queue.
 
 ```js
-queue.enqueue(10).enqueue(20);
+queue.enqueue(10).enqueue(20); // or queue.push(123)
 ```
 
 ### front
@@ -112,11 +112,11 @@ peeks on the back element in the queue.
 console.log(queue.back()); // 20
 ```
 
-### dequeue
+### dequeue (pop)
 dequeue the front element in the queue.
 
 ```js
-console.log(queue.dequeue()); // 10
+console.log(queue.dequeue()); // 10 // or queue.pop()
 console.log(queue.front()); // 20
 ```
 

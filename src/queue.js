@@ -25,6 +25,15 @@ class Queue {
   }
 
   /**
+   * Adds an element at the back of the queue.
+   * @public
+   * @param {number|string|object} element
+   */
+  push(element) {
+    return this.enqueue(element);
+  }
+
+  /**
    * Dequeues the front element in the queue.
    * @public
    * @returns {number|string|object}
@@ -42,6 +51,15 @@ class Queue {
     this._elements = this._elements.slice(this._offset);
     this._offset = 0;
     return first;
+  }
+
+  /**
+   * Dequeues the front element in the queue.
+   * @public
+   * @returns {number|string|object}
+   */
+  pop() {
+    return this.dequeue();
   }
 
   /**
