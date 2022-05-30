@@ -3,7 +3,9 @@ export class Queue<T> {
   isEmpty(): boolean;
   size(): number;
   enqueue(element: T): Queue<T>;
+  push(element: T): Queue<T>;
   dequeue(): T;
+  pop(): T;
   front(): T;
   back(): T;
   toArray(): T[];
