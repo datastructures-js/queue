@@ -123,16 +123,15 @@ console.log(queue.front()); // 20
 Dequeuing all elements takes <i>O(n)</i> instead of <i>O(n<sup>2</sup>)</i> when using shift/unshift with arrays.
 
 <b>Explanation</b> by <a href="https://github.com/alexypdu">@alexypdu</a>:<br/><br/>
-since `.dequeue` is using `Array.slice()` which runs in $O(n)$, the complexity is: $$\frac{n}{2} + \frac{n}{4}  + \cdots + 1 < \frac{n}{2} + \frac{n}{4}  + \cdots = \frac{n}{2} \cdot \sum_{i=0}^{\infty} \frac{1}{2^i} = \frac{n}{2} \cdot 2 = n = O(n)$$
 
-So the overall complexity of dequeuing all elements is $O(n + n) = O(n)$, and hence the amortized complexity of `dequeue()` is $O(1)$.
+Internally, when half the elements have been dequeued, we will resize the dynamic array using `Array.slice()` which runs in $O(n)$. Since dequeuing all $n$ elements will resize the array $\log_2n$ times, the complexity is $$1 + 2 + 4 + \cdots + 2^{\log_2 n - 1} = 2 ^ {(\log_2 n - 1) + 1} - 1 = n - 1 = O(n)$$ Hence the overall complexity of dequeuing all elements is $O(n + n) = O(n)$, and the amortized complexity of `dequeue()` is thus $O(1)$.
 
 <b>benchmark:</b>
 
 dequeuing 1 million elements in Node v14
 
 <table>
- <tr><td>queue.dequeue</td><td>array.shift</td></tr>
+ <tr><td>Queue.dequeue</td><td>Array.shift</td></tr>
   <tr><td>~27 ms</td><td>~4 mins 31 secs</td></tr>
 </table>
 
