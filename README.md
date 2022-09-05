@@ -113,21 +113,26 @@ console.log(queue.back()); // 20
 ```
 
 ### dequeue (pop)
-removes and returns the front element of the queue.
+removes and returns the front element of the queue in O(1) runtime.
 
 ```js
 console.log(queue.dequeue()); // 10 // or queue.pop()
 console.log(queue.front()); // 20
 ```
 
-Dequeuing all elements takes <i>O(n\*log(n))</i> instead of <i>O(n<sup>2</sup>)</i> when using shift/unshift with arrays.
+Dequeuing all elements takes <i>O(n)</i> instead of <i>O(n<sup>2</sup>)</i> when using shift/unshift with arrays.
+
+<b>Explanation</b> by @alexypdu:
+since `Array.slice()` runs in $O(n)$, the complexity is: $$\frac{n}{2} + \frac{n}{4}  + \cdots + 1 < \frac{n}{2} + \frac{n}{4}  + \cdots = \frac{n}{2} \cdot \sum_{i=0}^{\infty} \frac{1}{2^i} = \frac{n}{2} \cdot 2 = n = O(n)$$
+
+So the overall complexity of dequeuing all elements is $O(n + n) = O(n)$, and hence the amortized complexity of `dequeue()` is $O(1)$.
 
 <b>benchmark:</b>
 
 dequeuing 1 million elements in Node v14
 
 <table>
- <tr><td>dequeue</td><td>shift</td></tr>
+ <tr><td>queue.dequeue</td><td>array.shift</td></tr>
   <tr><td>~27 ms</td><td>~4 mins 31 secs</td></tr>
 </table>
 
