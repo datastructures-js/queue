@@ -126,6 +126,15 @@ class Queue {
   }
 
   /**
+   * Checks if an array contains a value
+   * @public
+   * @return {Boolean}
+   */
+  contains(element) {
+    return this.toArray().includes(element);
+  }
+  
+  /**
    * Creates a queue from an existing array.
    * @public
    * @static
