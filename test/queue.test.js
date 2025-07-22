@@ -90,4 +90,14 @@ describe('Queue unit tests', () => {
       expect(queue.isEmpty()).to.be.equal(true);
     });
   });
+
+  describe('.contains(element)', () => {
+    it('should contain "apple" but not "banana"', () => {
+      queue.enqueue("orange");
+      queue.enqueue("apple");
+      queue.enqueue("pear");
+      expect(queue.contains("apple")).to.be.equal(true);
+      expect(queue.contains("banana")).to.be.equal(false);
+    });
+  });
 });
