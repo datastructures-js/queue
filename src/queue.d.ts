@@ -11,5 +11,6 @@ export class Queue<T> {
   toArray(): T[];
   clear(): void;
   clone(): Queue<T>;
+  contains(element: T): boolean;
   static fromArray<T>(elements: T[]): Queue<T>;
 }
