@@ -23,6 +23,7 @@ A performant queue implementation in javascript.
   * [clone](#clone)
   * [toArray](#toarray)
   * [clear](#clear)
+  * [contains](#contains)
 * [Build](#build)
 * [License](#license)
 
@@ -176,6 +177,17 @@ clears all elements from the queue.
 ```js
 queue.clear();
 queue.size(); // 0
+```
+
+### contains
+checks if an element is in the queue
+
+```js
+queue.enqueue("orange");
+queue.enqueue("apple");
+queue.enqueue("pear");
+console.log(queue.contains("apple")); // true
+console.log(queue.contains("banana")); // false
 ```
 
 ### Build
