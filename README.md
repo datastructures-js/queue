@@ -23,6 +23,7 @@ A performant queue implementation in javascript.
   * [clone](#clone)
   * [toArray](#toarray)
   * [clear](#clear)
+  * [contains](#contains)
 * [Build](#build)
 * [License](#license)
 
