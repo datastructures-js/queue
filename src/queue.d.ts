@@ -4,10 +4,10 @@ export class Queue<T> {
   size(): number;
   enqueue(element: T): Queue<T>;
   push(element: T): Queue<T>;
-  dequeue(): T;
-  pop(): T;
-  front(): T;
-  back(): T;
+  dequeue(): T | null;
+  pop(): T | null;
+  front(): T | null;
+  back(): T | null;
   toArray(): T[];
   clear(): void;
   clone(): Queue<T>;
