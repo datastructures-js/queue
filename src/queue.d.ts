@@ -8,6 +8,7 @@ export class Queue<T> {
   pop(): T | null;
   front(): T | null;
   back(): T | null;
+  contains(elementOrCallback: T | ((element: T) => boolean)): boolean;
   toArray(): T[];
   clear(): void;
   clone(): Queue<T>;

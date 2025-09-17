@@ -90,4 +90,82 @@ describe('Queue unit tests', () => {
       expect(queue.isEmpty()).to.be.equal(true);
     });
   });
+
+  describe('.contains(elementOrCallback)', () => {
+    beforeEach(() => {
+      queue = new Queue([1, 2, 3, 'hello', { id: 1, name: 'John' }]);
+    });
+
+    describe('with element value', () => {
+      it('should return true for existing primitive elements', () => {
+        expect(queue.contains(1)).to.equal(true);
+        expect(queue.contains(2)).to.equal(true);
+        expect(queue.contains(3)).to.equal(true);
+        expect(queue.contains('hello')).to.equal(true);
+      });
+
+      it('should return false for non-existing primitive elements', () => {
+        expect(queue.contains(4)).to.equal(false);
+        expect(queue.contains('world')).to.equal(false);
+        expect(queue.contains(0)).to.equal(false);
+      });
+
+      it('should return false for objects with different references', () => {
+        expect(queue.contains({ id: 1, name: 'John' })).to.equal(false);
+      });
+
+      it('should return false for empty queue', () => {
+        const emptyQueue = new Queue();
+        expect(emptyQueue.contains(1)).to.equal(false);
+      });
+    });
+
+    describe('with callback function', () => {
+      beforeEach(() => {
+        queue = new Queue([
+          { id: 1, name: 'John', age: 25 },
+          { id: 2, name: 'Jane', age: 30 },
+          { id: 3, name: 'Bob', age: 35 }
+        ]);
+      });
+
+      it('should find object by id using callback', () => {
+        expect(queue.contains((item) => item.id === 2)).to.equal(true);
+        expect(queue.contains((item) => item.id === 5)).to.equal(false);
+      });
+
+      it('should find object by name using callback', () => {
+        expect(queue.contains((item) => item.name === 'Jane')).to.equal(true);
+        expect(queue.contains((item) => item.name === 'Alice')).to.equal(false);
+      });
+
+      it('should find object by age using callback', () => {
+        expect(queue.contains((item) => item.age > 30)).to.equal(true);
+        expect(queue.contains((item) => item.age > 40)).to.equal(false);
+      });
+
+      it('should work with complex conditions', () => {
+        const complexCondition = (item) => item.age >= 30
+          && item.name.startsWith('J');
+        expect(queue.contains(complexCondition)).to.equal(true);
+
+        const falseCondition = (item) => item.age < 25
+          && item.name === 'John';
+        expect(queue.contains(falseCondition)).to.equal(false);
+      });
+
+      it('should work with primitive elements using callback', () => {
+        const primitiveQueue = new Queue([1, 2, 3, 4, 5]);
+        expect(primitiveQueue.contains((item) => item > 3)).to.equal(true);
+        expect(primitiveQueue.contains((item) => item > 10)).to.equal(false);
+        const evenCheck = (item) => item % 2 === 0;
+        expect(primitiveQueue.contains(evenCheck)).to.equal(true);
+      });
+
+      it('should return false for empty queue with callback', () => {
+        const emptyQueue = new Queue();
+        expect(emptyQueue.contains((item) => item.id === 1)).to.equal(false);
+      });
+    });
+  });
 });

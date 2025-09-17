@@ -99,6 +99,25 @@ class Queue {
   }
 
   /**
+   * Checks if the queue contains a specific element or matches a condition.
+   * @public
+   * @param {number|string|object|function} elementOrCallback - Element to search for or callback function
+   * @returns {boolean}
+   */
+  contains(elementOrCallback) {
+    for (let i = this._offset; i < this._elements.length; i += 1) {
+      if (typeof elementOrCallback === 'function') {
+        if (elementOrCallback(this._elements[i])) {
+          return true;
+        }
+      } else if (this._elements[i] === elementOrCallback) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
    * Returns the remaining elements in the queue as an array.
    * @public
    * @returns {array}
