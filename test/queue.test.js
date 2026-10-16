@@ -71,9 +71,16 @@ describe('Queue unit tests', () => {
   });
 
   describe('dequeue()', () => {
-    it('should dequeue all elements', () => {
+    it('should dequeue some (all in this case) elements', () => {
       expect(queue.dequeue()).to.be.equal(8);
       expect(queue.pop()).to.be.equal(45);
+    });
+  });
+  
+  describe('dequeueAll()', () => {
+    it('should dequeue all elements', () => {
+      const q = Queue.fromArray([1, 2, 3]);
+      expect(q.dequeueAll()).to.deep.equal([1, 2, 3]);
     });
   });
 

@@ -1,6 +1,7 @@
 /**
  * @license MIT
  * @copyright 2020 Eyas Ranjous <eyas.ranjous@gmail.com>
+ * @copyright 2026 Vlad Ceresna <vladceresna6@gmail.com>
  *
  * @class
  */
@@ -51,6 +52,17 @@ class Queue {
     this._elements = this._elements.slice(this._offset);
     this._offset = 0;
     return first;
+  }
+  
+  /**
+   * Dequeues all elements from the queue.
+   * @public
+   * @returns {array}
+   */
+  dequeueAll() {
+    let arr = this.toArray();
+    this.clear()
+    return arr;
   }
 
   /**

@@ -5,6 +5,7 @@ export class Queue<T> {
   enqueue(element: T): Queue<T>;
   push(element: T): Queue<T>;
   dequeue(): T | null;
+  dequeueAll(): T[];
   pop(): T | null;
   front(): T | null;
   back(): T | null;
